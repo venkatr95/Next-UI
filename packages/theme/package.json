@@ -1,0 +1,33 @@
+{
+  "name": "@next-ui/theme",
+  "version": "0.1.0",
+  "description": "Theme system for @next-ui components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@next-ui/utils": "*",
+    "class-variance-authority": "^0.7.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "react": "^19.3.0",
+    "@types/react": "^19.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

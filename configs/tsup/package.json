@@ -1,0 +1,9 @@
+{
+  "name": "@next-ui/tsup-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.ts",
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  }
+}

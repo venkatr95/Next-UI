@@ -1,0 +1,10 @@
+{
+  "extends": "../configs/tsconfig/react.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "paths": {
+      "@next-ui/*": ["../packages/*/src"]
+    }
+  },
+  "include": ["stories", ".storybook"]
+}

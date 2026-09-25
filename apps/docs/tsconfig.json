@@ -1,0 +1,9 @@
+{
+  "extends": "../../configs/tsconfig/react.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./src/*"], "@next-ui/*": ["../../packages/*/src"] }
+  },
+  "include": ["next-env.d.ts", "src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

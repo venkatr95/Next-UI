@@ -1,0 +1,35 @@
+{
+  "name": "@next-ui/utils",
+  "version": "0.1.0",
+  "description": "Utility functions for @next-ui components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rimraf dist",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "@types/react": "^19.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

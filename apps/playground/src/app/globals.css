@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}

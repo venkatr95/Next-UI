@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --nextui-primary: #6366f1;
+    --nextui-secondary: #8b5cf6;
+    --nextui-accent: #f59e0b;
+    --nextui-bg: #ffffff;
+    --nextui-fg: #0a0a0a;
+    --nextui-muted: #f4f4f5;
+    --nextui-muted-fg: #71717a;
+    --nextui-border: #e4e4e7;
+    --nextui-radius: 0.5rem;
+  }
+  .dark {
+    --nextui-primary: #818cf8;
+    --nextui-secondary: #a78bfa;
+    --nextui-accent: #fbbf24;
+    --nextui-bg: #09090b;
+    --nextui-fg: #fafafa;
+    --nextui-muted: #27272a;
+    --nextui-muted-fg: #a1a1aa;
+    --nextui-border: #27272a;
+  }
+  body {
+    @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50;
+    font-family: "Inter", system-ui, sans-serif;
+  }
+  * {
+    @apply border-zinc-200 dark:border-zinc-800;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-zinc-400 dark:bg-zinc-600;
+}
