@@ -74,6 +74,11 @@ export function ToastProvider({
   ...props
 }: ToastProviderProps) {
   const [toasts, setToasts] = useState<ToastItem[]>([]);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const addToast = useCallback(
     (toast: Omit<ToastItem, "id" | "createdAt">) => {
@@ -105,11 +110,12 @@ export function ToastProvider({
   return (
     <ToastContext.Provider value={ctx}>
       {children}
-      {typeof document !== "undefined" &&
-        createPortal(
-          <ToastContainer placement={placement} toasts={toasts} removeToast={removeToast} />,
-          document.body
-        )}
+      {mounted
+        ? createPortal(
+            <ToastContainer placement={placement} toasts={toasts} removeToast={removeToast} />,
+            document.body
+          )
+        : null}
     </ToastContext.Provider>
   );
 }
