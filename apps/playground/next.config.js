@@ -2,6 +2,9 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Vercel enables this via modifyConfig; preview-comment upload then fails
+  // the deployment on this monorepo. Opt out until that platform path works.
+  supportsImmutableAssets: false,
   outputFileTracingRoot: path.join(__dirname, "../.."),
   transpilePackages: [
     "@next-ui/core",
