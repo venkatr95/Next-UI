@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "npm ci",
-  "buildCommand": "npx turbo run build --filter=playground"
+  "buildCommand": "npx turbo run build --filter=playground && rm -rf .next && cp -R apps/playground/.next .next"
 }
